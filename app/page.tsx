@@ -20,8 +20,8 @@ export default function Page() {
           <div className="relative overflow-hidden rounded-3xl border border-hp-softGray bg-white shadow-card">
             <div className="relative w-full aspect-[16/9]">
               <Image
-                src="/register.jpg" // replace or remove if not using images
-                alt="Register"
+                src="/signin.jpg" // replace or remove if not using images
+                alt="Sign in"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 540px, 100vw"
