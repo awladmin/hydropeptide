@@ -13,20 +13,21 @@ export default function WipeButton({
     <Link
       href={href}
       className={[
-        "group relative inline-flex items-center justify-center w-full sm:w-auto",
+        // full width by default, auto width on larger screens
+        "group relative inline-flex items-center justify-center w-full sm:w-full md:w-full lg:w-full",
         // padding: left/right 32px, top/bottom 16px
         "px-8 py-4",
         // white with border, black text
         "rounded-none border border-hp-black bg-hp-white text-hp-black",
         // typography: 14px, uppercase, normal weight
-        "text-[14px] uppercase font-normal",
-        // behavior
+        "text-[14px] uppercase font-normal tracking-[0.02em]",
+        // transitions & focus
         "overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-hp-navy focus-visible:ring-offset-2",
         "active:scale-[0.997] transition-transform",
         className,
       ].join(" ")}
     >
-      {/* solid blue wipe (#3d72f6) slides in from left on hover */}
+      {/* solid blue wipe (#3d72f6) sliding in from left */}
       <span
         aria-hidden="true"
         className="
