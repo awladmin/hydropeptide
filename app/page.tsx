@@ -1,7 +1,19 @@
 import Image from "next/image";
 import WipeButton from "./components/WipeButton";
+import { headers } from "next/headers";
 
 export default function Page() {
+  const h = headers();
+  const site = h.get("x-site"); // extend this for anymore domains
+  const isCom = site === "com";
+  const signupHref = isCom
+    ? "#tbd"
+    : "https://hydropeptideunitedkingdom-hydropeptide.bridgeapp.com/login?external=1&state=4kfaXaUiYSODutYz1ym0IQOD7OsGDiW77ajaDBZay-Q";
+
+  const registerHref = isCom
+    ? "https://register.hydropeptide.com/education"
+    : "https://register.hydropeptide.com/education";
+
   return (
     <main className="bg-hp-white">
       <section className="mx-auto max-w-page px-5 py-16 md:py-24">
@@ -41,9 +53,7 @@ export default function Page() {
 
               {/* ONLY this button is the link */}
               <div className="mt-6">
-                <WipeButton href="https://hydropeptideunitedkingdom-hydropeptide.bridgeapp.com/login?external=1&state=4kfaXaUiYSODutYz1ym0IQOD7OsGDiW77ajaDBZay-Q">
-                  Sign in
-                </WipeButton>
+                <WipeButton href={signupHref}>Sign in</WipeButton>
               </div>
             </div>
           </div>
@@ -71,9 +81,7 @@ export default function Page() {
               </p>
 
               <div className="mt-6">
-                <WipeButton href="https://register.hydropeptide.com/education">
-                  REGISTER
-                </WipeButton>
+                <WipeButton href={registerHref}>REGISTER</WipeButton>
               </div>
             </div>
           </div>
