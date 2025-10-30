@@ -1,14 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
+import WipeButton from "./components/WipeButton";
 
 export default function Page() {
   return (
-    <main className="bg-white">
-      {/* Hero */}
-
-      {/* Large actions */}
-      <section className="mx-auto max-w-page px-5 py-12 md:py-16">
-        <div className="mx-auto max-w-5xl text-center">
+    <main className="bg-hp-white">
+      <section className="mx-auto max-w-page px-5 py-16 md:py-24">
+        <div className="mx-auto max-w-3xl text-center">
           <h1 className="font-serif2 text-[clamp(28px,6vw,56px)] leading-tight tracking-[0.2px]">
             HydroPeptide Learning Lab
           </h1>
@@ -17,19 +14,16 @@ export default function Page() {
           </p>
         </div>
 
-        {/* GLAM CTAs */}
+        {/* Two non-link panels; ONLY the button links */}
         <div className="mt-10 md:mt-12 grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2">
-          {/* SIGN UP / PORTAL */}
-          <Link
-            href="https://hydropeptideunitedkingdom-hydropeptide.bridgeapp.com/login?external=1&state=4kfaXaUiYSODutYz1ym0IQOD7OsGDiW77ajaDBZay-Q"
-            className="group relative overflow-hidden rounded-3xl border border-hp-border bg-white shadow-card hover:shadow-xl transition-shadow"
-          >
+          {/* Panel 1 */}
+          <div className="relative overflow-hidden rounded-3xl border border-hp-softGray bg-white shadow-card">
             <div className="relative w-full aspect-[16/9]">
               <Image
-                src="/signin.jpg"
-                alt="Learning portal"
+                src="/register.jpg" // replace or remove if not using images
+                alt="Register"
                 fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                className="object-cover"
                 sizes="(min-width: 1024px) 540px, 100vw"
                 priority
               />
@@ -42,30 +36,24 @@ export default function Page() {
               <p className="mt-2 text-sm md:text-base text-hp-muted">
                 Access courses, protocols, and resources.
               </p>
+
+              {/* ONLY this button is the link */}
               <div className="mt-6">
-                <span
-                  className="inline-flex w-full items-center justify-center rounded-full px-8 py-4
-                       text-lg md:text-xl font-semibold text-white
-                       bg-gradient-to-r from-cyan-500 to-blue-600 group-hover:brightness-110
-                       shadow-md active:translate-y-px"
-                >
+                <WipeButton href="https://hydropeptideunitedkingdom-hydropeptide.bridgeapp.com/login?external=1&state=4kfaXaUiYSODutYz1ym0IQOD7OsGDiW77ajaDBZay-Q">
                   Sign in to Portal
-                </span>
+                </WipeButton>
               </div>
             </div>
-          </Link>
+          </div>
 
-          {/* REGISTER / EDUCATION */}
-          <Link
-            href="https://register.hydropeptide.com/education"
-            className="group relative overflow-hidden rounded-3xl border border-hp-border bg-white shadow-card hover:shadow-xl transition-shadow"
-          >
+          {/* Panel 2 */}
+          <div className="relative overflow-hidden rounded-3xl border border-hp-softGray bg-white shadow-card">
             <div className="relative w-full aspect-[16/9]">
               <Image
                 src="/register.jpg"
-                alt="Education registration"
+                alt="Register"
                 fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                className="object-cover"
                 sizes="(min-width: 1024px) 540px, 100vw"
                 priority
               />
@@ -76,20 +64,16 @@ export default function Page() {
                 Register for Education
               </h2>
               <p className="mt-2 text-sm md:text-base text-hp-muted">
-                Register for new product and protocol sessions.
+                Sign up for new product and protocol sessions.
               </p>
+
               <div className="mt-6">
-                <span
-                  className="inline-flex w-full items-center justify-center rounded-full px-8 py-4
-                       text-lg md:text-xl font-semibold text-white
-                       bg-gradient-to-r from-emerald-500 to-green-700 group-hover:brightness-110
-                       shadow-md active:translate-y-px"
-                >
-                  Register
-                </span>
+                <WipeButton href="https://register.hydropeptide.com/education">
+                  REGISTER
+                </WipeButton>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
       </section>
     </main>
