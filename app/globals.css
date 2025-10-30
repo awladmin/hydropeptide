@@ -1,8 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your requested serif stack (will fall back to Times if EditorsNote isn't present yet) */
 :root {
-  --bg: #0f172a; /* slate-900 */
-  --card: #111827; /* gray-900 */
-  --text: #e5e7eb; /* gray-200 */
-  --muted: #9ca3af; /* gray-400 */
-  --accent: #06b6d4; /* cyan-500 */
-  --accent-2: #22c55e; /* green-500 */
+  --font-secondary-thin: "EditorsNote-Thin", "Times New Roman", Times, serif;
+}
+
+/* Optional local font load:
+@font-face{
+  font-family: "EditorsNote-Thin";
+  src: url("/fonts/EditorsNote-Thin.woff2") format("woff2");
+  font-weight: 100 300;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
