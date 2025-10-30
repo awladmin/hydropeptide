@@ -2,23 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Your requested serif stack (will fall back to Times if EditorsNote isn't present yet) */
-:root {
-  --font-secondary-thin: "EditorsNote-Thin", "Times New Roman", Times, serif;
-}
-
-/* Optional local font load:
-@font-face{
+@font-face {
   font-family: "EditorsNote-Thin";
   src: url("/fonts/EditorsNote-Thin.woff2") format("woff2");
-  font-weight: 100 300;
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
-*/
+
+@font-face {
+  font-family: "EditorsNote-Regular";
+  src: url("/fonts/EditorsNote-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir-Roman";
+  src: url("/fonts/Avenir-Roman") format("woff2");
+}
+
+/* Your requested serif stack (will fall back to Times if EditorsNote isn't present yet) */
+:root {
+  --font-secondary-thin: "EditorsNote-Thin", "Times New Roman", Times, serif;
+  --font-secondary: "EditorsNote-Regular", "Times New Roman", Times, serif;
+  --font-primary: "Avenir-Roman", "Times New Roman", Times, serif;
+}
 
 html,
 body {
   margin: 0;
   padding: 0;
+  font-family: "Avenir-Roman";
 }

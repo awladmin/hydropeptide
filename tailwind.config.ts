@@ -5,11 +5,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "hp-navy": "#0f2a55",
-        "hp-navy-2": "#163665",
-        "hp-text": "#0b1020",
-        "hp-muted": "#5a667d",
-        "hp-border": "#e6e9ef",
+        "hp-black": "#000000",
+        "hp-white": "#ffffff",
+        "hp-softGray": "#f7f8f9",
+        "hp-navy": "#0f2d64",
+        "hp-softBlue": "#c8d3f3",
+        "hp-text": "#000000", // body text = black per guide
+        "hp-border": "#f0f2f5", // subtle border (slightly darker than softGray)
       },
       fontFamily: {
         serif2: [
@@ -19,7 +21,7 @@ const config: Config = {
           "serif",
         ],
         sans: [
-          "ui-sans-serif",
+          "var(--font-primary)",
           "system-ui",
           "-apple-system",
           "Segoe UI",

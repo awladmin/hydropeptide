@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "./components/Header";
 import type { Metadata, Viewport } from "next";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hydropeptidelearninglab.co.uk"),
@@ -67,6 +68,7 @@ export default function RootLayout({
       <body className="text-hp-text bg-white font-sans">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

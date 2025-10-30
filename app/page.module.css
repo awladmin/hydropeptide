@@ -45,6 +45,7 @@
   border: none;
   border-radius: 999px;
   padding: 12px 18px;
+  background: var(--hp-navy);
   font-weight: 600;
   cursor: pointer;
   transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
