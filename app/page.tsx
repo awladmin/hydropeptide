@@ -7,7 +7,7 @@ export default function Page() {
       <section className="mx-auto max-w-page px-5 py-16 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="font-serif2 text-[clamp(28px,6vw,56px)] leading-tight tracking-[0.2px]">
-            HydroPpeptide Learning Lab (UK)
+            HydroPeptide Learning Lab (UK)
           </h1>
           <p className="mt-3 text-hp-muted text-base md:text-lg">
             Your gateway to professional education &amp; product mastery.
@@ -61,7 +61,7 @@ export default function Page() {
               />
             </div>
             <div className="p-6 md:p-8">
-              <p className="text-sm text-hp-muted">Become a Member</p>
+              <p className="text-sm text-hp-muted">Not already a member?</p>
               <h2 className="mt-1 font-serif2 text-2xl md:text-3xl">
                 Register for Education
               </h2>
