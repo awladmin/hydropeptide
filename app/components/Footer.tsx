@@ -67,7 +67,7 @@ export default function Footer() {
             <li>
               <Link
                 href="https://hydropeptide.co.uk/pages/our-story-2"
-                className="hover:underline"
+                className="hover:underline text-[14px]"
               >
                 Our Story
               </Link>
@@ -75,7 +75,7 @@ export default function Footer() {
             <li>
               <Link
                 href="https://hydropeptide.co.uk/pages/commitment"
-                className="hover:underline"
+                className="hover:underline text-[14px]"
               >
                 Our Commitment
               </Link>
@@ -83,7 +83,7 @@ export default function Footer() {
             <li>
               <Link
                 href="https://hydropeptide.co.uk/policies/privacy-policy"
-                className="hover:underline"
+                className="hover:underline text-[14px]"
               >
                 Privacy Policy
               </Link>
@@ -91,7 +91,7 @@ export default function Footer() {
             <li>
               <Link
                 href="https://hydropeptide.co.uk/pages/cookie-policy"
-                className="hover:underline"
+                className="hover:underline text-[14px]"
               >
                 Cookie Policy
               </Link>
