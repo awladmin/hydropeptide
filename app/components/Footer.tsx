@@ -1,10 +1,67 @@
 import Image from "next/image";
 import Link from "next/link";
+import { headers } from "next/headers";
+
+const footerLinks = {
+  uk: {
+    socials: {
+      facebook: "https://www.facebook.com/HydroPeptide",
+      instagram: "https://www.instagram.com/hydropeptideuk/",
+      youtube: "https://www.youtube.com/user/hydropeptidemedia",
+    },
+    links: [
+      {
+        label: "Our Story",
+        href: "https://hydropeptide.co.uk/pages/our-story-2",
+      },
+      {
+        label: "Our Commitment",
+        href: "https://hydropeptide.co.uk/pages/commitment",
+      },
+      {
+        label: "Privacy Policy",
+        href: "https://hydropeptide.co.uk/policies/privacy-policy",
+      },
+      {
+        label: "Cookie Policy",
+        href: "https://hydropeptide.co.uk/pages/cookie-policy",
+      },
+    ],
+    copyright: "HydroPeptide UK",
+  },
+  com: {
+    socials: {
+      facebook: "https://www.facebook.com/HydroPeptide",
+      instagram: "https://www.instagram.com/hydropeptide/",
+      youtube: "https://www.youtube.com/user/hydropeptidemedia",
+    },
+    links: [
+      { label: "Our Story", href: "https://hydropeptide.com/pages/our-story" },
+      {
+        label: "Privacy Policy",
+        href: "https://hydropeptide.com/policies/privacy-policy",
+      },
+      {
+        label: "Cookie Policy",
+        href: "https://hydropeptide.com/pages/cookie-policy",
+      },
+    ],
+    copyright: "HydroPeptide Inc.",
+  },
+};
 
 export default function Footer() {
+  const h = headers();
+  const site = h.get("x-site");
+  const isCom = site === "com";
+
+  const { socials, links, copyright } = isCom
+    ? footerLinks.com
+    : footerLinks.uk;
+
   return (
     <footer className="bg-hp-navy text-hp-white">
-      <div className="mx-auto max-w-page px-5 py-12 md:py-16 grid gap-10 md:grid-cols-12">
+      <div className="mx-auto max-w-page px-8 py-12 md:py-16 grid gap-10 md:grid-cols-12">
         {/* Left: logo + blurb */}
         <div className="md:col-span-6">
           <Image
@@ -17,14 +74,14 @@ export default function Footer() {
           />
           <p className="mt-6 text-sm leading-relaxed text-white/85">
             With over 20 years of experience in professional skincare, we’ve
-            been at the forefront of peptide technology-creating
+            been at the forefront of peptide technology—creating
             scientifically-advanced, easy-to-use products.
           </p>
 
-          {/* Socials (inline SVGs so no extra packages) */}
+          {/* Socials */}
           <div className="mt-6 flex items-center gap-4">
             <Link
-              href="https://www.facebook.com/HydroPeptide"
+              href={socials.facebook}
               target="_blank"
               aria-label="Facebook"
               className="hover:opacity-90"
@@ -34,7 +91,7 @@ export default function Footer() {
               </svg>
             </Link>
             <Link
-              href="https://www.instagram.com/hydropeptideuk/"
+              href={socials.instagram}
               target="_blank"
               aria-label="Instagram"
               className="hover:opacity-90"
@@ -44,7 +101,7 @@ export default function Footer() {
               </svg>
             </Link>
             <Link
-              href="https://www.youtube.com/user/hydropeptidemedia"
+              href={socials.youtube}
               target="_blank"
               aria-label="YouTube"
               className="hover:opacity-90"
@@ -56,46 +113,21 @@ export default function Footer() {
           </div>
 
           <p className="mt-6 text-xs text-white/70">
-            © {new Date().getFullYear()} HydroPeptide UK. All rights reserved.
+            © {new Date().getFullYear()} {copyright}. All rights reserved.
           </p>
         </div>
 
-        {/* Columns */}
+        {/* Right: links */}
         <div className="md:col-span-6">
           <h3 className="font-serif2 text-xl">About</h3>
           <ul className="mt-4 space-y-3">
-            <li>
-              <Link
-                href="https://hydropeptide.co.uk/pages/our-story-2"
-                className="hover:underline text-[14px]"
-              >
-                Our Story
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://hydropeptide.co.uk/pages/commitment"
-                className="hover:underline text-[14px]"
-              >
-                Our Commitment
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://hydropeptide.co.uk/policies/privacy-policy"
-                className="hover:underline text-[14px]"
-              >
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://hydropeptide.co.uk/pages/cookie-policy"
-                className="hover:underline text-[14px]"
-              >
-                Cookie Policy
-              </Link>
-            </li>
+            {links.map(({ label, href }) => (
+              <li key={href}>
+                <Link href={href} className="hover:underline text-[12px]">
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
