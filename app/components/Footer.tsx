@@ -16,7 +16,7 @@ export default function Footer() {
             priority
           />
           <p className="mt-6 text-sm leading-relaxed text-white/85">
-            With over 15 years of experience in professional skincare, we’ve
+            With over 20 years of experience in professional skincare, we’ve
             been at the forefront of peptide technology-creating
             scientifically-advanced, easy-to-use products.
           </p>
