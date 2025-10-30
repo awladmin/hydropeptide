@@ -7,7 +7,7 @@ export default function Page() {
   const site = h.get("x-site"); // extend this for anymore domains
   const isCom = site === "com";
   const signupHref = isCom
-    ? "#tbd"
+    ? "https://hydropeptide.bridgeapp.com/login?external=1&state=BI-kykFl1sc_6Vj2QqrGTOn4fuIz_tsA8kqWHDVkN8I"
     : "https://hydropeptideunitedkingdom-hydropeptide.bridgeapp.com/login?external=1&state=4kfaXaUiYSODutYz1ym0IQOD7OsGDiW77ajaDBZay-Q";
 
   const registerHref = isCom
