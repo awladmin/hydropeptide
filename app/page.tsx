@@ -14,14 +14,14 @@ export default function Page() {
     ? "https://register.hydropeptide.com/education"
     : "https://register.hydropeptide.com/education";
 
-  const localeText = isCom ? "US" : "UK";
+  const localeText = isCom ? "" : " (UK)";
 
   return (
     <main className="bg-hp-white">
       <section className="mx-auto max-w-page px-5 py-16 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="font-serif2 text-[clamp(28px,6vw,56px)] leading-tight tracking-[0.2px]">
-            HydroPeptide Learning Lab ({localeText})
+            HydroPeptide Learning Lab{localeText}
           </h1>
           <p className="mt-3 text-hp-muted text-base md:text-lg">
             Your gateway to professional education &amp; product mastery.
