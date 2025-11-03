@@ -43,7 +43,9 @@ export default function Page() {
               />
             </div>
             <div className="p-6 md:p-8">
-              <p className="text-sm text-hp-muted">For professionals</p>
+              <p className="mt-2 text-sm md:text-base text-hp-muted">
+                For professionals
+              </p>
               <h2 className="mt-1 font-serif2 text-2xl md:text-3xl">
                 Learning Lab
               </h2>
@@ -73,7 +75,9 @@ export default function Page() {
               />
             </div>
             <div className="p-6 md:p-8">
-              <p className="text-sm text-hp-muted">Not already a member?</p>
+              <p className="mt-2 text-sm md:text-base text-hp-muted">
+                Not already a member?
+              </p>
               <h2 className="mt-1 font-serif2 text-2xl md:text-3xl">
                 Register for Education
               </h2>
