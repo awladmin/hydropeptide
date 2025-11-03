@@ -66,6 +66,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     icons: {
       icon: [
+        { url: "/favicon.ico" },
         {
           url: "/HydroPeptide-favicon_16x16.progressive.png",
           sizes: "16x16",
